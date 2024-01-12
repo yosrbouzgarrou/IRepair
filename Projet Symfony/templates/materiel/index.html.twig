@@ -1,0 +1,54 @@
+{% extends 'materiel/base.html.twig' %}
+
+{% block title %}Materiel index{% endblock %}
+
+{% block body2 %}
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                    <h3 class="mb-0">Materiels</h3>
+                    <p class="text-sm mb-0">
+                        Liste des materiels.
+                    </p>
+                </div>
+                <div class="table-responsive py-4">
+                    <table class="table table-flush" id="datatable-buttons">
+                        <thead class="thead-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>TypePiece</th>
+                            <th>Probleme</th>
+                            <th>DateDistribution</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for materiel in materiels %}
+                            <tr>
+                                <td>{{ materiel.id }}</td>
+                                <td>{{ materiel.typePiece }}</td>
+                                <td>{{ materiel.probleme }}</td>
+                                <td>{{ materiel.dateDistribution ? materiel.dateDistribution|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ path('app_materiel_show', {'idPiece': materiel.id}) }}">show</a>
+                                    <a class="btn btn-warning" href="{{ path('app_materiel_edit', {'idPiece': materiel.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('app_materiel_new') }}">Create new</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ knp_pagination_render(materiels) }}
+{% endblock %}

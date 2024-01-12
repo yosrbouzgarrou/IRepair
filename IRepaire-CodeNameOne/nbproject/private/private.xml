@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/MapForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/Main/MainApp.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/utils/Statics.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/BaseForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/ListFactureForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/services/ServiceMateriel.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/ListOffreFrontForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/build.xml</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/ProfileForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/AjouterMaterielForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/ListAbonnementFrontForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/entities/Facture.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/entities/Materiel.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/services/ServiceFacture.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/ListMaterielForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/BaseFrontForm.java</file>
+            <file>file:/C:/Users/KattaX/Documents/NetBeansProjects/IRepaire/src/com/mycompany/myapp/gui/SignInForm.java</file>
+        </group>
+    </open-files>
+</project-private>

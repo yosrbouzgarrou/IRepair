@@ -1,0 +1,46 @@
+
+
+{% extends 'admin/index2.html.twig' %}
+
+{% block title %}affichage!{% endblock %}
+{% block crud %}
+
+            <div class="card">
+            <div class="card-body">
+            <h4 class="card-title">Liste des Rendez-vous</h4>
+              <div class="table-responsive">
+            <table class="table">
+                    <thead>
+                    <tr>     <th>id rendezvous</th>
+                        <th>date du redenzvous</th>
+                        <th>id devis</th>
+                        <th>id du client</th>
+                         <th>Modification</th>
+                          <th>Supression</th>
+                       
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rendezvous in r %}
+                        <tr>
+                            <td>{{ rendezvous.Idrdv }}</td>
+                            <td>{{ rendezvous.daterdv |date("m/d/Y")}}</td>
+                            <td>{{ rendezvous.Iddevis }}</td>
+                               <td>{{ rendezvous.IdClient }}</td>
+                               <td>
+                                <a class="btn btn-success" href="{{ path('modifrdv',{'id':rendezvous.Idrdv}) }}">Modifier</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" href="{{ path('supprdv',{'id':rendezvous.Idrdv}) }}">Supprimer</a>
+                            </td>
+                           
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+
+
+
+
+{% extends 'admin/index2.html.twig' %}
+{% block crud %}
+
+<div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+              {{ form_start(f,{attr:{novalidate:'novalidate'}}) }}
+                <div class="card-body">
+                  <h4 class="card-title">Ajouter un Devis</h4>
+                  <p class="card-description">
+                   
+                  </p>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Prix</label>
+                       {{ form_widget(f.prix,{'attr':{'class':'form-control','placeholder': 'Prix'}}) }}
+                       {{ form_errors(f.prix,{'attr':{'class':'text-danger'}}) }}
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Id du Client</label>
+                       {{ form_widget(f.Id_Client,{'attr':{'class':'form-control','placeholder': 'Id du Client'}}) }}
+                       {{ form_errors(f.Id_Client,{'attr':{'class':'text-danger'}}) }}
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Date du devis</label>
+                      
+ {{ form_widget(f.date_devis,{'attr':{'class':'form-control','placeholder': 'Date du devis'}}) }}
+ {{ form_errors(f.date_devis,{'attr':{'class':'text-danger'}}) }}
+
+                    </div>
+                    
+                    <div class="form-check form-check-flat form-check-primary">
+                      
+                    </div>
+                      {{ form_widget(f.ajouter, { 'label': 'Ajouter' , 'attr':{'class':'btn btn-primary me-2' , 'type':'submit'}}) }}
+                    
+{{ form_end(f)}}
+                 
+
+            {% endblock %}

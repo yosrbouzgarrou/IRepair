@@ -1,0 +1,91 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Liste des materiels</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-search">
+
+                <div class="input-group custom-search-form">
+
+                    <input type="text" id="search" class="form-control" placeholder="recherche materiel par nom">
+                </div>
+                <!-- /input-group -->
+            </div>
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="#"> Resultats<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level" id="entitiesNav">
+                    </ul>
+                </li>
+            </ul>
+            <br><br><br><br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="our_products">
+                        <div class="row">
+                            {% for mat in materiels %}
+
+                                <div class="col-md-4">
+                                    <div class="product_box">
+                                        <figure><img src="{{ asset('front/images/product7.png') }}" alt="#"/></figure>
+                                        <h3>{{ mat.nom }}</h3>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            var searchRequest = null;
+            $("#search").keyup(function () {
+                var minlength = 1;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNav").html('');
+                if (value.length >= minlength) {
+                    if (searchRequest != null)
+                        searchRequest.abort();
+                    searchRequest = $.ajax({
+                        type: "GET",
+                        url: "{{ path('ajax_search_materiel') }}",
+                        data: {
+                            'q': value
+                        },
+                        dataType: "text",
+                        success: function (msg) {
+                            //we need to check if the value is the same
+                            if (value === $(that).val()) {
+                                var result = JSON.parse(msg);
+                                $.each(result, function (key, arr) {
+                                    $.each(arr, function (id, value) {
+                                        if (key === 'materiels') {
+                                            if (id !== 'error') {
+                                                console.log(value[1]);
+                                                entitySelector.append( '<li><a href="/materiel/front/show/' + id + '">' + '<b " style="width: 30px; height: 20px" >'+ value[0]+ '<b/>' + '</a></li>');
+                                            } else {
+                                                entitySelector.append('<li class="errorLi">' + value + '</li>');
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

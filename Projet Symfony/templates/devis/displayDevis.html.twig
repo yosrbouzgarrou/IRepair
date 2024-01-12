@@ -1,0 +1,44 @@
+{% extends 'admin/index2.html.twig' %}
+
+{% block title %}affichage!{% endblock %}
+{% block crud %}
+
+            <div class="card">
+            <div class="card-body">
+            <h4 class="card-title">Liste des devis</h4>
+              <div class="table-responsive">
+            <table class="table">
+                    <thead>
+                    <tr>     <th>id devis</th>
+                        <th>prix</th>
+                        <th>id client</th>
+                        <th>date</th>
+                         <th>Modification</th>
+                          <th>Supression</th>
+                       
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for devis in d %}
+                        <tr>
+                            <td>{{ devis.Iddevis }}</td>
+                            <td>{{ devis.prix }}</td>
+                            <td>{{ devis.IdClient }}</td>
+                               <td>{{ devis.datedevis|date("m/d/Y") }}</td>
+                                <td>
+                                <a class="btn btn-success" href="{{ path('modifdevis',{'id':devis.Iddevis}) }}">Modifier</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" href="{{ path('suppdevis',{'id':devis.Iddevis}) }}">Supprimer</a>
+                            </td>
+                           
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+{% endblock %}

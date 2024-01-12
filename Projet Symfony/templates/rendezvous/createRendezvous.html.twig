@@ -1,0 +1,51 @@
+
+
+
+{% extends 'admin/index2.html.twig' %}
+{% block crud %}
+
+<div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+            {{ form_start(d,{attr:{novalidate:'novalidate'}}) }}
+                <div class="card-body">
+                  <h4 class="card-title">Ajouter un Rendez-vous</h4>
+                  <p class="card-description">
+                   
+                  </p>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Date du rendezvous</label>
+                      {{ form_widget(d.date_rdv,{'attr':{'class':'form-control'}}) }}
+
+                      
+{{ form_errors(d.date_rdv,{'attr':{'class':'text-danger'}}) }}
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Id du Devis</label>
+                      {{ form_widget(d.id_devis,{'attr':{'class':'form-control'}}) }}
+
+                      
+{{ form_errors(d.id_devis,{'attr':{'class':'text-danger'}}) }}
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Id du Client</label>
+                      
+{{ form_widget(d.id_client,{'attr':{'class':'form-control'}}) }}
+
+                      
+{{ form_errors(d.id_client,{'attr':{'class':'text-danger'}}) }}
+
+                    </div>
+                    
+                    <div class="form-check form-check-flat form-check-primary">
+                    
+                      
+                    </div>
+                    {{ form_widget(d.ajouter, { 'label': 'Ajouter' , 'attr':{'class':'btn btn-primary me-2' , 'type':'submit'}}) }}
+                    
+                    
+                    
+{{ form_end(d)}}
+                 
+
+            {% endblock %}

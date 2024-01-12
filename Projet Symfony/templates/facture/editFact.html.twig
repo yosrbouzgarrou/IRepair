@@ -1,0 +1,14 @@
+{% extends 'facture/base.html.twig' %}
+
+{% block title %}Edit Facture{% endblock %}
+
+{% block body2 %}
+    <h1 style="color: #d5606e">Modifier une Facture</h1>
+
+    {{ include('facture/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+
+    <a href="{{ path('facture_all') }}">retourner à la liste</a>
+
+    {# {{ include('offre/_delete_form.html.twig') }} #}
+{% endblock %}

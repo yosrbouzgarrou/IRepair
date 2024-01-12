@@ -1,0 +1,78 @@
+{% extends 'facture/base.html.twig' %}
+{% block title %}Facture num {{ facture.id }}{% endblock %}
+
+{% block body2 %}
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                    <h3 class="mb-0">Facture <b>{{ facture.materiel.nom }}</b></h3>
+                    <p class="text-sm mb-0">
+                        Details de la facture {{ facture.id }}.
+                    </p>
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6 text-right">
+
+                            <a href="{{ path('facture_edit', {'id': facture.id}) }}"
+                               class="btn btn-sm btn-neutral btn-round btn-icon" data-toggle="tooltip"
+                               data-original-title="Edit reclamation">
+                                <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+                                <span class="btn-inner--text">Edit</span>
+                            </a>
+
+                            <button type="button" class="btn btn-sm btn-danger btn-round btn-icon"
+                                    data-toggle="modal"
+                                    data-target="#modal-notification">
+                                <span data-toggle="tooltip" data-original-title="Delete facture">
+                                <span class="btn-inner--icon"><i class="fas fa-trash"></i></span>
+                                <span class="btn-inner--text">Delete</span>
+                                </span>
+                            </button>
+                            <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog"
+                                 aria-labelledby="modal-notification" aria-hidden="true">
+                                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                    <div class="modal-content bg-gradient-danger">
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="modal-title-notification">Are you sure?</h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="py-3 text-center">
+                                                <i class="ni ni-bell-55 ni-3x"></i>
+                                                <h4 class="heading mt-4">You should read this!</h4>
+                                                <p>Voulez-vous supprimer cette facture? ce processus est irreversible
+                                                    .</p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form action="{{ path('app_facture_delete',{"idFact":facture.id}) }}"
+                                                  method="post">
+                                                <button type="submit" class="btn btn-white">Ok, Delete it</button>
+                                            </form>
+                                            <button type="button" class="btn btn-link text-white ml-auto"
+                                                    data-dismiss="modal">Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p><b>Nom:</b> {{ facture.materiel.nom }}</p>
+
+                    <p><b>Prix totale:</b> {{ facture.prixTotale }}</p>
+                    <p><b>Crée le:</b> {{ facture.materiel.dateDistribution|date('Y-m-d') }}</p>
+                    <a href="{{ path('facture_all') }}"> <i class="fas fa-backward"></i> Return </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

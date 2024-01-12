@@ -1,0 +1,11 @@
+{% extends 'materiel/base.html.twig' %}
+
+{% block title %}New Materiel{% endblock %}
+
+{% block body2 %}
+    <h1>Create new Materiel</h1>
+
+    {{ include('materiel/_form.html.twig') }}
+
+    <a href="{{ path('app_materiel_list') }}">back to list</a>
+{% endblock %}

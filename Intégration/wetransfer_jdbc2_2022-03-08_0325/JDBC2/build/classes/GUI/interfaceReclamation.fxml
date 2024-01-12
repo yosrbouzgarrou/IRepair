@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #c5c9c6;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InterfaceReclamationController">
+   <children>
+      <AnchorPane prefHeight="720.0" prefWidth="525.0" style="-fx-background-color: #CE2400; -fx-border-color: #000000;">
+         <children>
+            <Button fx:id="btn_cpt" layoutX="32.0" layoutY="239.0" mnemonicParsing="false" onAction="#BtnCpt" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" text="Gestion des comptes" AnchorPane.bottomAnchor="400.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btn_mat" layoutX="32.0" layoutY="333.0" mnemonicParsing="false" onAction="#BtnMat" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" text="Gestion des matériaux" AnchorPane.bottomAnchor="320.0" />
+            <Button layoutX="32.0" layoutY="409.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="Gestion des catégories" AnchorPane.bottomAnchor="240.0" />
+            <Button layoutX="32.0" layoutY="495.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="Gestion des comptes" AnchorPane.bottomAnchor="160.0" />
+            <Button layoutX="32.0" layoutY="583.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="Gestion des poles" AnchorPane.bottomAnchor="80.0" />
+            <Text layoutX="43.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue " textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text layoutX="534.7999877929688" layoutY="118.0669937133789" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des reclamations" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Regular" size="59.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tvRec" layoutX="570.0" layoutY="159.0" prefHeight="279.0" prefWidth="702.0">
+        <columns>
+          <TableColumn id="nom" fx:id="client" prefWidth="124.66668701171875" text="Client" />
+          <TableColumn id="prenom" fx:id="date_rec" prefWidth="145.33331298828125" text="Date reclamation" />
+            <TableColumn id="dn" fx:id="messageRec" minWidth="0.0" prefWidth="318.6666259765625" text="Message reclamation" />
+            <TableColumn id="nom" fx:id="etat" prefWidth="112.0" text="Etat" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnTraiter" layoutX="640.0" layoutY="538.0" mnemonicParsing="false" onAction="#Traiter_Rec" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" text="Traiter reclamation" />
+      <Button fx:id="btn_retirer" layoutX="1021.0" layoutY="590.0" mnemonicParsing="false" onAction="#Retirer_Rec" prefHeight="40.0" prefWidth="193.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" text="Retirer" />
+   </children>
+</AnchorPane>

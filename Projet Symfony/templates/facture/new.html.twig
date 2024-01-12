@@ -1,0 +1,50 @@
+{% extends 'admin/index2.html.twig' %}
+{% block crud %}
+
+    {% block title %}New Facture{% endblock %}
+
+    {% block body %}
+        <h1>Create new Facture</h1>
+
+        <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+        {{ form_start(d,{attr:{novalidate:'novalidate'}}) }}
+        <div class="card-body">
+        <h4 class="card-title">Ajouter une facture </h4>
+        <p class="card-description">
+
+        </p>
+        <form class="forms-sample">
+        <div class="form-group">
+            <label for="exampleInputUsername1">Prix Totale </label>
+            {{ form_widget(d.prixTotale,{'attr':{'class':'form-control'}}) }}
+
+
+            {{ form_errors(d.prixTotale,{'attr':{'class':'text-danger'}}) }}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nom de materiel</label>
+
+            {{ form_widget(d.materiel,{'attr':{'class':'form-control'}}) }}
+
+
+            {{ form_errors(d.materiel,{'attr':{'class':'text-danger'}}) }}
+
+        </div>
+
+        <div class="form-check form-check-flat form-check-primary">
+
+
+        </div>
+        {{ form_end(d) }}
+
+        <a href="{{ path('app_facture_index') }}">back to list</a>
+    {% endblock %}
+
+
+
+
+
+
+{% endblock %}

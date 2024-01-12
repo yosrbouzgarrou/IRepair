@@ -1,0 +1,44 @@
+{% extends 'materiel/base.html.twig' %}
+
+{% block title %}Materiel{% endblock %}
+
+{% block body2 %}
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                    <h3 class="mb-0">Materiel</h3>
+                </div>
+                <div class="table-responsive py-4">
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>IdPiece</th>
+                            <td>{{ materiel.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>TypePiece</th>
+                            <td>{{ materiel.typePiece }}</td>
+                        </tr>
+                        <tr>
+                            <th>Probleme</th>
+                            <td>{{ materiel.probleme }}</td>
+                        </tr>
+                        <tr>
+                            <th>DateDistribution</th>
+                            <td>{{ materiel.dateDistribution ? materiel.dateDistribution|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="{{ path('app_materiel_list') }}">back to list</a>
+
+                <a href="{{ path('app_materiel_edit', {'idPiece': materiel.id}) }}">edit</a>
+
+                {{ include('materiel/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'facture/index.html.twig' %}
+{% block title %}Factures{% endblock %}
+
+{% block breadcrumb %}
+    <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Edit Facture</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('facture_all') }}">Factures</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Facture</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
+
+{% block widgets %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                    <h3 class="mb-0">Edit Facture <b>{{ facture.id }}</b></h3>
+                    <p class="text-sm mb-0">
+                        Edit information of facture {{ facture.id }}.
+                    </p>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+
+
+
+                            <div class="form-group">
+                                <label>Nom</label>
+                                <textarea class="form-control" name="your-desc">{{ facture.materiel.nom}}</textarea>
+                            </div>
+
+                        <button class="btn btn-dribbble" type="submit">Update Facture</button>
+                    </form>
+                    <div class="pt-2">
+                        <a href="{{ path('facture_all') }}"> <i class="fas fa-backward"></i> Cancel </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

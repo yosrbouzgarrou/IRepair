@@ -1,0 +1,22 @@
+{% extends 'base2.html.twig' %}
+{% block body  %}
+    <div class="about">
+        <div class="container">
+            <div class="row d_flex">
+                <div class="col-md-5">
+                    <div class="titlepage">
+                        <h2>{{ materiel.nom }}</h2>
+                        <p>{{ materiel.probleme }}</p>
+                        <a class="read_more" href="#">{{ materiel.typePiece }}</a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="about_img">
+                        <figure><img src="{{ asset('front/images/about.jpg') }}" alt="#"/></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'facture/base.html.twig' %}
+{% block body2 %}
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                    <h3 class="mb-0">Factures</h3>
+                    <p class="text-sm mb-0">
+                        List des factures.
+                    </p>
+                </div>
+                <div class="table-responsive py-4">
+                    <table class="table table-flush" id="datatable-buttons">
+                        <thead class="thead-light">
+                        <tr>
+                            <th>Reference</th>
+                            <th>Nom de Matériel</th>
+                            <th>Prix Totale</th>
+                            <th>Cree le :</th>
+                            <th>Actions</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for fact in factures %}
+                            <tr>
+                                <td class="table-user">
+                                    <a href="{{ path('app_facture_show',{'idFact': fact.id}) }}"
+                                       class="font-weight-bold">{{ fact.id | upper }}</a>
+                                </td>
+                                <td>{{ fact.materiel.nom  | capitalize }}</td>
+
+                                <td>{{ fact.prixTotale  | capitalize }}</td>
+                                <td>{{ fact.materiel.dateDistribution|date('Y-m-d') }}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ path('facture_edit',{'id': fact.id}) }}">Modifier</a>
+
+                                    <form method="post" action="{{ path('app_facture_delete',{'idFact': fact.id}) }}">
+                                        <button type="submit" class="btn btn-danger">Supprimer
+                                        </button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(factures) }}</div>
+{% endblock %}

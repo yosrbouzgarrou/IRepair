@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Supp_FactController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-14.0" prefHeight="454.0" prefWidth="697.0" style="-fx-background-color: #CAC7C7;" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@gestion-mat.css" />
+         </stylesheets>
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="122.0" layoutX="-23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/1644247795650%20(1).png" />
+               </image>
+            </ImageView>
+            <Label graphicTextGap="5.0" layoutX="199.0" layoutY="14.0" prefHeight="47.0" prefWidth="313.0" text="GESTION DES FACTURES" textAlignment="CENTER" textFill="#ce2400">
+               <font>
+                  <Font name="Microsoft Uighur" size="37.0" />
+               </font>
+            </Label>
+            <Pane layoutX="21.0" layoutY="61.0" prefHeight="376.0" prefWidth="662.0" style="-fx-background-color: #CE2400;">
+               <children>
+                  <Label layoutX="40.0" layoutY="54.0" text="ID_FACT" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sid_piece" layoutX="137.0" layoutY="55.0" style="-fx-background-color: #dbcbca;" />
+                  <Button fx:id="Supp_Facture" defaultButton="true" layoutX="509.0" layoutY="299.0" mnemonicParsing="false" onAction="#SuppFact" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #dbcbca;" text="Supprimer" textFill="RED" />
+               </children>
+            </Pane>
+            <Accordion layoutX="376.0" layoutY="140.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Gestion_FactController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-12.0" layoutY="-9.0" prefHeight="520.0" prefWidth="761.0" style="-fx-background-color: #CAC7C7;" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@gestion-mat.css" />
+         </stylesheets>
+         <children>
+            <Label graphicTextGap="5.0" layoutX="199.0" layoutY="14.0" prefHeight="47.0" prefWidth="313.0" text="GESTION DES FACTURES" textAlignment="CENTER" textFill="#ce2400">
+               <font>
+                  <Font name="Microsoft Uighur" size="37.0" />
+               </font>
+            </Label>
+            <Pane layoutX="71.0" layoutY="118.0" prefHeight="376.0" prefWidth="662.0" style="-fx-background-color: #CE2400;">
+               <children>
+                  <AnchorPane layoutX="90.0" layoutY="211.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <TableView fx:id="tv" layoutX="23.0" layoutY="36.0" prefHeight="239.0" prefWidth="615.0">
+                     <columns>
+                        <TableColumn fx:id="nompre" prefWidth="293.3333435058594" text="NOM_PRENOM" />
+                        <TableColumn fx:id="prix" minWidth="0.0" prefWidth="144.0" text="PRIX_TOTALE" />
+                        <TableColumn fx:id="ref" minWidth="0.0" prefWidth="176.66668701171875" text="REF_PIECE" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="btn_modif" defaultButton="true" layoutX="474.0" layoutY="320.0" mnemonicParsing="false" onAction="#Modifier_Fact" text="Modifier" />
+                  <Button fx:id="btnSupp" defaultButton="true" layoutX="549.0" layoutY="320.0" mnemonicParsing="false" onAction="#Supp_Fact" text="Supprimer" />
+                  <Button fx:id="btn_ajout" defaultButton="true" layoutX="405.0" layoutY="319.0" mnemonicParsing="false" onAction="#Ajouter_Facture" text="Ajouter" />
+               </children>
+            </Pane>
+            <Accordion layoutX="376.0" layoutY="140.0" />
+            <TextField fx:id="criteria" layoutX="496.0" layoutY="83.0" onKeyReleased="#textChanged" prefHeight="25.0" prefWidth="237.0" promptText="Critère" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
